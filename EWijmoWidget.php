@@ -184,11 +184,8 @@ abstract class EWijmoWidget extends CWidget
      * wijmo widget initialization。
      */
    public function  wijInit(){
-       if(empty($this->widgetName)){
-           $widgetName = strtolower(get_class($this));
-       }else{
-           $widgetName = $this->widgetName;
-       }
+
+       $widgetName = empty($this->widgetName) ?  strtolower(get_class($this)) : $this->widgetName ;
 
        $options=empty($this->options) ? '' : CJavaScript::encode($this->options);
        $jsCode = <<<SET_UP
